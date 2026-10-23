@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Consultar AwesomeAPI e Banco Central
+      - name: Consultar AwesomeAPI e PTAX oficial (SGS)
         env:
           AWESOME_API_KEY: ${{ secrets.AWESOME_API_KEY }}
         run: python scripts/atualizar.py
@@ -50,7 +50,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sem mudanças nos arquivos de cotação."
           else
-            git commit -m "Atualização automática: comercial e PTAX oficial"
+            git commit -m "Atualização automática: comercial e PTAX SGS"
             for tentativa in 1 2 3; do
               git fetch origin main
               git rebase origin/main
