@@ -62,7 +62,11 @@
     th, td { padding: 10px 13px; border-bottom: 1px solid #edf1f6; }
     td:nth-child(n+2) { font-variant-numeric: tabular-nums; }
     tbody tr:last-child td { border-bottom: 0; }
-    select { padding: 8px 11px; border: 1px solid #bfcede; border-radius: 9px; font: inherit; background: #fff; color: #192840; }
+    .historico-toggle { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid #b6cce2; border-radius: 11px; background: #e9f0f8; }
+    .historico-toggle button { border: 0; border-radius: 7px; background: transparent; color: #334d69; padding: 8px 14px; font: inherit; font-size: .87rem; font-weight: 650; cursor: pointer; }
+    .historico-toggle button:hover:not([aria-pressed="true"]) { background: #d6e4f2; }
+    .historico-toggle button[aria-pressed="true"] { background: #174b7b; color: #fff; box-shadow: 0 2px 5px #15375220; }
+    .historico-toggle button:focus-visible { outline: 3px solid #66a6e4; outline-offset: 2px; }
     .section-description { color: #63758a; font-size: .89rem; margin: 0 0 13px; }
     .small-print { color: #61758a; font-size: .81rem; }
     footer { border-top: 1px solid #dce5ef; color: #6a7a8d; padding: 23px 0 30px; font-size: .83rem; }
@@ -143,11 +147,10 @@
     <section aria-labelledby="titulo-historico">
       <div class="section-title">
         <h2 id="titulo-historico">Histórico diário armazenado</h2>
-        <label for="tipo-historico" class="visually-hidden">Série histórica</label>
-        <select id="tipo-historico" aria-label="Selecionar série histórica">
-          <option value="comercial">Dólar comercial (amostras do projeto)</option>
-          <option value="ptax">PTAX (fechamento oficial)</option>
-        </select>
+        <div class="historico-toggle" role="group" aria-label="Selecionar série histórica">
+          <button type="button" data-historico="comercial" aria-pressed="true">Dólar comercial</button>
+          <button type="button" data-historico="ptax" aria-pressed="false">PTAX</button>
+        </div>
       </div>
       <div class="card" style="padding:0; overflow:hidden">
         <div class="table-scroll">
@@ -249,6 +252,7 @@
       ? `${valor > 0 ? "+" : ""}${valor.toLocaleString("pt-BR", { maximumFractionDigits: 3 })}%`
       : "-";
     let historico = null;
+    let tipoHistorico = "comercial";
 
     function preencherCotacao(tipo, registro) {
       if (!registro || typeof registro !== "object") return;
@@ -262,7 +266,7 @@
 
     function preencherHistorico() {
       const corpo = $("historico-corpo");
-      const tipo = $("tipo-historico").value;
+      const tipo = tipoHistorico;
       const registros = historico && Array.isArray(historico[tipo]) ? historico[tipo] : [];
       corpo.replaceChildren();
       if (!registros.length) {
@@ -331,7 +335,15 @@
         + params.toString();
     }
     ligarConsultaBcb();
-    $("tipo-historico").addEventListener("change", preencherHistorico);
+    document.querySelectorAll(".historico-toggle button").forEach((botao) => {
+      botao.addEventListener("click", () => {
+        tipoHistorico = botao.dataset.historico;
+        document.querySelectorAll(".historico-toggle button").forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === botao));
+        });
+        preencherHistorico();
+      });
+    });
     $("recarregar").addEventListener("click", carregar);
     carregar();
   </script>
