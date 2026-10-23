@@ -83,7 +83,7 @@
     <div class="container">
       <div class="eyebrow">Projeto Cotações Cambiais</div>
       <h1>USD/BRL: cotações e dados públicos</h1>
-      <p>Três formas de consultar USD/BRL: registros centralizados do projeto, cotação de mercado da AwesomeAPI e PTAX de fechamento confirmada pelo Banco Central. Os JSONs podem ser consumidos por aplicativos.</p>
+      <p>Três formas de consultar USD/BRL: registros centralizados do projeto, cotação de mercado da AwesomeAPI e PTAX de fechamento publicada nas séries SGS do Banco Central. Os JSONs podem ser consumidos por aplicativos.</p>
       <div class="header-bottom">
         <span class="chip"><span class="dot"></span> Atualização programada: diariamente, 18h (Fortaleza)</span>
         <span id="estado" class="chip" role="status" aria-live="polite">Carregando arquivos publicados...</span>
@@ -120,7 +120,7 @@
         </article>
       </div>
       <div class="info">
-        <strong>Atenção às datas:</strong> o dólar comercial é a última amostra capturada pela AwesomeAPI; a PTAX é exclusivamente o último boletim de <strong>fechamento</strong> confirmado pelo Banco Central. Em dias não úteis ou antes da divulgação do fechamento, a PTAX pode ser de um dia anterior. Nenhuma dessas cotações equivale à taxa negociada com um banco.
+        <strong>Atenção às datas:</strong> o dólar comercial é a última amostra capturada pela AwesomeAPI; a PTAX é o <strong>fechamento diário</strong> publicado nas séries oficiais SGS do Banco Central. Em dias não úteis ou antes da divulgação do fechamento, a PTAX pode ser de um dia anterior. Nenhuma dessas cotações equivale à taxa negociada com um banco.
         <div id="data-coleta" style="margin-top:5px"></div>
       </div>
     </section>
@@ -137,7 +137,7 @@
         </article>
         <article class="card link-card">
           <h3>Histórico do projeto</h3>
-          <p>Histórico comercial acumulado desde as coletas do projeto e histórico oficial PTAX, preenchido retroativamente pelo Banco Central.</p>
+          <p>Histórico comercial acumulado desde as coletas do projeto e histórico oficial PTAX das séries SGS, recuperado também retroativamente.</p>
           <code>https://mateusrodrigo.github.io/cotacoes-cambiais/historico.json</code>
           <div class="link-actions"><a class="btn" href="historico.json" target="_blank" rel="noopener noreferrer">Abrir historico.json</a></div>
         </article>
@@ -155,12 +155,12 @@
       <div class="card" style="padding:0; overflow:hidden">
         <div class="table-scroll">
           <table>
-            <thead><tr><th>Data</th><th>Compra (R$)</th><th>Venda (R$)</th><th>Variação (%)</th><th>Horário de referência</th></tr></thead>
+            <thead><tr><th>Data</th><th>Compra (R$)</th><th>Venda (R$)</th><th>Variação (%)</th><th>Data/hora de referência</th></tr></thead>
             <tbody id="historico-corpo"><tr><td colspan="5">Carregando histórico...</td></tr></tbody>
           </table>
         </div>
       </div>
-      <p class="small-print" style="margin-top:10px">Exibidos até 15 registros. A série comercial reflete capturas efetivas do serviço, não um histórico oficial de fechamento. A série PTAX contém apenas boletins de fechamento oficiais. Para acessar tudo, utilize historico.json.</p>
+      <p class="small-print" style="margin-top:10px">Exibidos até 15 registros. A série comercial reflete capturas efetivas do serviço, não um histórico oficial de fechamento. A série PTAX contém apenas fechamentos diários oficiais do BCB. O SGS informa a data, sem horário intradiário. Para acessar tudo, utilize historico.json.</p>
     </section>
 
     <section aria-labelledby="titulo-fontes">
@@ -197,10 +197,14 @@
         </article>
         <article class="card">
           <h3>Opção 3: Banco Central (fonte oficial)</h3>
-          <p class="muted">Fonte efetivamente usada pelo projeto para recuperar e validar a PTAX de fechamento e seu histórico. Os links SGS oferecem a mesma referência diária para compra e venda separadamente.</p>
+          <p class="muted">Fonte utilizada pelo projeto para recuperar a PTAX de fechamento e seu histórico por meio das séries SGS 10813 (compra) e 1 (venda). O SGS informa apenas a data da taxa, sem horário intradiário.</p>
           <div class="url-row">
-            <span class="url-label">Fechamentos PTAX USD (compra e venda juntas, últimos 30 dias)</span>
-            <a id="bcb-fechamentos" href="https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao" target="_blank" rel="noopener noreferrer">Abrir consulta oficial de fechamentos</a>
+            <span class="url-label">Histórico PTAX de compra, últimos 30 dias (SGS 10813)</span>
+            <a id="bcb-historico-compra" href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/20?formato=json" target="_blank" rel="noopener noreferrer">Abrir histórico oficial de compra</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Histórico PTAX de venda, últimos 30 dias (SGS 1)</span>
+            <a id="bcb-historico-venda" href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/20?formato=json" target="_blank" rel="noopener noreferrer">Abrir histórico oficial de venda</a>
           </div>
           <div class="url-row">
             <span class="url-label">Última PTAX de compra (SGS 10813)</span>
@@ -219,12 +223,12 @@
             <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json</a>
           </div>
           <div class="url-row">
-            <span class="url-label">API Olinda: PTAX por dia ou período, compra e venda juntas</span>
+            <span class="url-label">API Olinda: consulta alternativa da PTAX (documentação)</span>
             <a href="https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao" target="_blank" rel="noopener noreferrer">Documentação oficial da API PTAX</a>
           </div>
         </article>
       </div>
-      <div class="info"><strong>Qual fonte escolher?</strong> Use os JSONs deste projeto para obter a amostra comercial diária e a PTAX oficial consolidada. Consulte a AwesomeAPI diretamente para observar o mercado mais recentemente ou o BCB para conferir os boletins PTAX. Para negociações reais, confirme a taxa efetiva com a instituição financeira. O acesso às APIs externas está sujeito às condições de cada provedor; não exponha a chave da AwesomeAPI em páginas públicas.</div>
+      <div class="info"><strong>Qual fonte escolher?</strong> Use os JSONs deste projeto para obter a amostra comercial diária e a PTAX oficial consolidada. Consulte a AwesomeAPI diretamente para acompanhar o mercado ou o BCB para conferir as séries diárias de fechamento. Para negociações reais, confirme a taxa efetiva com a instituição financeira. O acesso às APIs externas está sujeito às condições de cada provedor; não exponha a chave da AwesomeAPI em páginas públicas.</div>
     </section>
   </main>
 
@@ -260,8 +264,12 @@
       $(tipo + "-venda").textContent = real(registro.venda);
       $(tipo + "-variacao").textContent = percentual(registro.variacao_percentual);
       const confirmado = tipo === "ptax" && registro.confirmada === true && registro.tipo_boletim === "Fechamento";
-      $(tipo + "-data").textContent = `Referência: ${dataHoraBR(registro.data_hora)} (Fortaleza) · Data: ${dataBR(registro.data)}`
-        + (tipo === "ptax" ? (confirmado ? " · Fechamento confirmado pelo BCB" : " · Fechamento não validado") : " · Amostra de mercado");
+      if (tipo === "ptax") {
+        $(tipo + "-data").textContent = `Fechamento de ${dataBR(registro.data)}`
+          + (confirmado ? " · Fonte oficial BCB/SGS" : " · Fechamento não validado");
+      } else {
+        $(tipo + "-data").textContent = `Referência: ${dataHoraBR(registro.data_hora)} (Fortaleza) · Amostra de mercado`;
+      }
     }
 
     function preencherHistorico() {
@@ -278,7 +286,8 @@
       }
       for (const item of [...registros].sort((a, b) => (b.data || "").localeCompare(a.data || "")).slice(0, 15)) {
         const linha = corpo.insertRow();
-        const valores = [dataBR(item.data), decimal(item.compra), decimal(item.venda), percentual(item.variacao_percentual), dataHoraBR(item.data_hora)];
+        const referencia = tipo === "ptax" ? "Fechamento diário (SGS)" : dataHoraBR(item.data_hora);
+        const valores = [dataBR(item.data), decimal(item.compra), decimal(item.venda), percentual(item.variacao_percentual), referencia];
         valores.forEach((valor) => { linha.insertCell().textContent = valor; });
       }
     }
@@ -301,7 +310,10 @@
         if (dados && dados.comercial && dados.ptax) {
           preencherCotacao("comercial", dados.comercial);
           preencherCotacao("ptax", dados.ptax);
-          $("data-coleta").textContent = `Última execução da coleta: ${dataHoraBR(dados.coletado_em)} (Fortaleza).`;
+          const aviso = dados.ptax_consulta_atualizada === false
+            ? " Atenção: o BCB não respondeu nesta execução; foi mantida a última PTAX oficial já validada."
+            : "";
+          $("data-coleta").textContent = `Última execução da coleta: ${dataHoraBR(dados.coletado_em)} (Fortaleza).${aviso}`;
           sucesso++;
         }
       }
@@ -318,23 +330,21 @@
       $("recarregar").disabled = false;
     }
 
-    // Gera a consulta pública Olinda para os últimos 30 dias, sem expor segredos.
-    function ligarConsultaBcb() {
+    // URLs oficiais de histórico por período, sem depender da API Olinda.
+    function ligarHistoricoBcb() {
       const fim = new Date();
       const inicio = new Date(fim.getTime() - 30 * 86400000);
-      const mmddaaaa = (d) => [String(d.getUTCMonth() + 1).padStart(2, "0"), String(d.getUTCDate()).padStart(2, "0"), d.getUTCFullYear()].join("-");
-      const params = new URLSearchParams({
-        "@codigoMoeda": "'USD'",
-        "@dataInicialCotacao": `'${mmddaaaa(inicio)}'`,
-        "@dataFinalCotacao": `'${mmddaaaa(fim)}'`,
-        "$format": "json",
-        "$top": "1000"
-      });
-      $("bcb-fechamentos").href = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/"
-        + "CotacaoMoedaPeriodoFechamento(codigoMoeda=@codigoMoeda,dataInicialCotacao=@dataInicialCotacao,dataFinalCotacao=@dataFinalCotacao)?"
-        + params.toString();
+      const ddmmaaaa = (d) => [String(d.getUTCDate()).padStart(2, "0"), String(d.getUTCMonth() + 1).padStart(2, "0"), d.getUTCFullYear()].join("/");
+      for (const [id, codigo] of [["bcb-historico-compra", 10813], ["bcb-historico-venda", 1]]) {
+        const query = new URLSearchParams({
+          formato: "json",
+          dataInicial: ddmmaaaa(inicio),
+          dataFinal: ddmmaaaa(fim)
+        });
+        $(id).href = `https://api.bcb.gov.br/dados/serie/bcdata.sgs.${codigo}/dados?${query}`;
+      }
     }
-    ligarConsultaBcb();
+    ligarHistoricoBcb();
     document.querySelectorAll(".historico-toggle button").forEach((botao) => {
       botao.addEventListener("click", () => {
         tipoHistorico = botao.dataset.historico;
