@@ -25,7 +25,7 @@ Os arquivos são públicos e não exigem autenticação. São **endpoints JSON e
 | Série | Origem | Interpretação |
 | --- | --- | --- |
 | `comercial` | [AwesomeAPI, USD-BRL](https://economia.awesomeapi.com.br/json/last/USD-BRL) | Última cotação indicativa disponível quando o script executa. |
-| `ptax` | [BCB, API PTAX Olinda](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao) | Taxa de referência do boletim oficial de **Fechamento**. |
+| `ptax` | [BCB, séries SGS 10813 e 1](https://dadosabertos.bcb.gov.br/dataset/10813-taxa-de-cambio---livre---dolar-americano-compra) | Taxa de referência do boletim oficial de **Fechamento**. |
 
 **Atenção:** o valor comercial armazenado não representa necessariamente o fechamento do mercado. A PTAX não é uma cotação negociável e pode ter uma data anterior à observação comercial, sobretudo em feriados e fins de semana. A taxa efetiva de uma operação de câmbio depende das condições contratadas com a instituição financeira.
 
@@ -38,8 +38,8 @@ O workflow executa o script **diariamente às 21h UTC (18h em `America/Fortaleza
 Em cada execução, o script:
 
 1. Consulta separadamente a última cotação comercial `USD-BRL` na AwesomeAPI, usando a chave configurada no GitHub Actions.
-2. Consulta a API oficial **`CotacaoMoedaPeriodoFechamento`** do BCB para obter a PTAX de fechamento do dólar no período dos **últimos 120 dias corridos**, incluindo a data atual.
-3. Confere o campo `tipoBoletim` e aceita somente registros identificados como **`Fechamento`** ou **`Fechamento PTAX`**. Se os dados necessários não puderem ser validados, a execução falha, em vez de publicar uma PTAX intermediária como fechamento.
+2. Consulta as séries oficiais **SGS 10813 (compra) e SGS 1 (venda)**, para recuperar os fechamentos PTAX de até **120 dias corridos** anteriores, incluindo a data atual. Se a consulta por período falhar por instabilidade HTTP, tenta recuperar os últimos 20 registros de cada série.
+3. Cruza as séries pela **mesma data**, excluindo observações sem par de compra e venda. As séries SGS são de fechamento diário, portanto não incluem boletins intermediários. Se ambas as consultas oficiais permanecerem indisponíveis, preserva a última PTAX oficial previamente confirmada; sem histórico oficial validado, a execução falha em vez de publicar uma taxa não confirmada.
 4. Carrega o histórico existente, preserva as amostras comerciais anteriores e incorpora os fechamentos oficiais, com **um registro por data** em cada série.
 5. Calcula a variação nominal e percentual da **compra PTAX** em relação ao fechamento anterior presente no histórico.
 6. Atualiza `docs/historico.json` e `docs/cotacao.json`. O workflow registra as alterações na branch `main` e publica a pasta `docs/` no GitHub Pages.
@@ -64,6 +64,7 @@ Contém um objeto com metadados da coleta e os dois registros mais recentes. Exe
     "comercial": "AwesomeAPI",
     "ptax": "Banco Central do Brasil"
   },
+  "ptax_consulta_atualizada": true,
   "comercial": {
     "data": "2026-10-23",
     "data_hora": "2026-10-23T17:59:00-03:00",
@@ -79,20 +80,19 @@ Contém um objeto com metadados da coleta e os dois registros mais recentes. Exe
   },
   "ptax": {
     "data": "2026-10-22",
-    "data_hora": "2026-10-22T13:12:09-03:00",
-    "timestamp": 1792685529,
     "compra": 5.0377,
     "venda": 5.0383,
     "fonte": "Banco Central do Brasil",
     "tipo_boletim": "Fechamento",
     "confirmada": true,
+    "series_sgs": { "compra": 10813, "venda": 1 },
     "variacao": 0.0107,
     "variacao_percentual": 0.212852
   }
 }
 ```
 
-Os campos de máxima, mínima e variação comercial aparecem quando disponibilizados pela AwesomeAPI. A PTAX não recebe máxima e mínima de mercado. A variação PTAX é calculada pelo próprio projeto e pode estar ausente no primeiro registro histórico.
+**O SGS não informa o horário da PTAX**, por isso os registros oficiais novos não incluem `data_hora` nem `timestamp`. O campo `ptax_consulta_atualizada` indica se foi possível consultar as séries oficiais nesta execução; `false` significa reutilização de fechamento confirmado anteriormente. Os campos de máxima, mínima e variação comercial aparecem quando disponibilizados pela AwesomeAPI. A PTAX não recebe máxima e mínima de mercado. A variação PTAX é calculada pelo próprio projeto e pode estar ausente no primeiro registro histórico.
 
 ### `historico.json`
 
@@ -120,12 +120,14 @@ Contém um **objeto**, não mais uma lista única:
 | `coletado_em` | string | Horário de execução da coleta, em ISO 8601 com fuso de Fortaleza. |
 | `fontes` | objeto | Identificação da origem de cada modalidade. |
 | `data` | string | Data de referência da cotação, formato `AAAA-MM-DD`. |
-| `data_hora` | string | Data e hora da observação, em ISO 8601 com fuso de Fortaleza. |
-| `timestamp` | inteiro | Instante correspondente à observação, em segundos Unix. |
+| `data_hora` | string, opcional | Horário disponível para a amostra comercial. O SGS PTAX não informa horário. |
+| `timestamp` | inteiro, opcional | Instante Unix da amostra comercial; não é criado artificialmente para os fechamentos SGS. |
 | `compra`, `venda` | número | Taxas em **BRL por 1 USD**. |
 | `fonte` | string | Provedor do registro. |
 | `tipo` | string | Na série comercial, identifica a cotação como `mercado_indicativo`. |
-| `tipo_boletim` | string | Na série PTAX, identifica `Fechamento`. |
+| `tipo_boletim` | string | Identifica a série PTAX como `Fechamento`. |
+| `series_sgs` | objeto | Códigos oficiais utilizados: compra `10813` e venda `1`. |
+| `ptax_consulta_atualizada` | booleano | Em `cotacao.json`: indica consulta SGS concluída nesta execução. |
 | `confirmada` | booleano | `true` nos fechamentos PTAX aceitos pelo script. |
 | `maxima`, `minima` | número, opcional | Valores informados pela AwesomeAPI para a série comercial. |
 | `variacao` | número, opcional | Variação nominal da compra. |
@@ -167,7 +169,7 @@ LICENSE                                  # Licença do código
 
 - **Python:** 3.12, utilizando somente a biblioteca padrão.
 - **Secret:** `AWESOME_API_KEY`, configurado em **Settings → Secrets and variables → Actions**. A chave é utilizada somente na consulta à AwesomeAPI e não deve constar no HTML ou nos JSONs.
-- **Banco Central:** consulta pública via API Olinda, sem necessidade de chave.
+- **Banco Central:** consulta pública via API SGS, sem necessidade de chave.
 - **Publicação:** GitHub Pages com origem **GitHub Actions** e permissões adequadas para gravação na branch `main`.
 - **Execução manual:** disponível no workflow `Atualizar cotações cambiais`.
 
@@ -179,7 +181,7 @@ Ao atualizar uma instalação antiga, **não exclua `docs/historico.json`**: o s
 - O agendamento diário não assegura execução pontual nem observações em todos os dias.
 - Falhas de coleta ou de validação podem interromper uma execução; aplicativos devem conferir `data`, `data_hora` e `coletado_em` antes de utilizar valores.
 - A cotação comercial é uma amostra indicativa; não constitui taxa efetiva de contratação cambial.
-- A PTAX é uma taxa oficial de referência, não uma cotação comercial continuamente atualizada.
+- A PTAX é uma taxa oficial diária de referência, não uma cotação comercial continuamente atualizada. O SGS publica a data, sem horário intradiário; as duas séries precisam ser pareadas por data.
 - Os aplicativos podem usar os endpoints JSON públicos ou consultar as APIs originais diretamente. As consultas diretas têm sua própria disponibilidade, condições e possíveis limites.
 
 ## Licença
@@ -191,6 +193,8 @@ O código deste repositório é distribuído sob a [licença MIT](LICENSE). O us
 - [Página pública do projeto](https://mateusrodrigo.github.io/cotacoes-cambiais/)
 - [AwesomeAPI: API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas)
 - [AwesomeAPI: autenticação com API Key](https://docs.awesomeapi.com.br/instrucoes-api-key)
+- [Banco Central: série SGS 10813, compra](https://dadosabertos.bcb.gov.br/dataset/10813-taxa-de-cambio---livre---dolar-americano-compra)
+- [Banco Central: série SGS 1, venda](https://dadosabertos.bcb.gov.br/dataset/1-taxa-de-cambio---livre---dolar-americano-venda---diario)
 - [Banco Central: documentação da API PTAX (Olinda)](https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao)
 - [Banco Central: dólar comercial, cotações diárias e metodologia](https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios)
 - [GitHub Actions](https://docs.github.com/en/actions)
