@@ -1,10 +1,30 @@
 {
-  "data": "2026-10-22",
-  "timestamp": 1792708204,
-  "bid": 5.0523,
-  "ask": 5.0527,
-  "high": 5.0533,
-  "low": 5.021,
-  "varBid": 0.0287,
-  "pctChange": 0.571301
+  "par": "USD/BRL",
+  "coletado_em": "2026-10-23T12:04:39-03:00",
+  "fontes": {
+    "comercial": "AwesomeAPI",
+    "ptax": "Banco Central do Brasil via AwesomeAPI"
+  },
+  "comercial": {
+    "data": "2026-10-23",
+    "data_hora": "2026-10-23T12:04:36-03:00",
+    "timestamp": 1792767876,
+    "compra": 5.0405,
+    "venda": 5.0427,
+    "maxima": 5.0543,
+    "minima": 5.0287,
+    "variacao": -0.0118,
+    "variacao_percentual": -0.233557
+  },
+  "ptax": {
+    "data": "2026-10-23",
+    "data_hora": "2026-10-23T11:06:09-03:00",
+    "timestamp": 1792764369,
+    "compra": 5.0319,
+    "venda": 5.0325,
+    "maxima": 5.0378,
+    "minima": 5.0319,
+    "variacao": -0.0058,
+    "variacao_percentual": -0.115135
+  }
 }
