@@ -79,7 +79,7 @@
     <div class="container">
       <div class="eyebrow">Projeto Cotações Cambiais</div>
       <h1>USD/BRL: cotações e dados públicos</h1>
-      <p>Consulta centralizada de dólar comercial e PTAX, com histórico diário e acesso às fontes utilizadas. Dados disponibilizados em arquivos JSON para integração com aplicativos.</p>
+      <p>Três formas de consultar USD/BRL: os dados centralizados pelo projeto, a AwesomeAPI diretamente ou a PTAX oficial no Banco Central. Os arquivos JSON do projeto são próprios para integração com aplicativos.</p>
       <div class="header-bottom">
         <span class="chip"><span class="dot"></span> Atualização programada: diariamente, 18h (Fortaleza)</span>
         <span id="estado" class="chip" role="status" aria-live="polite">Carregando arquivos publicados...</span>
@@ -90,7 +90,7 @@
   <main class="container">
     <section aria-labelledby="titulo-cotacoes">
       <div class="section-title">
-        <h2 id="titulo-cotacoes">Últimas cotações registradas</h2>
+        <h2 id="titulo-cotacoes">Últimas cotações armazenadas pelo projeto</h2>
         <button class="btn" id="recarregar" type="button">Recarregar dados</button>
       </div>
       <div class="cards">
@@ -122,17 +122,17 @@
     </section>
 
     <section aria-labelledby="titulo-projeto">
-      <div class="section-title"><h2 id="titulo-projeto">Endpoints públicos deste projeto</h2></div>
-      <p class="section-description">O GitHub Pages publica arquivos JSON estáticos, atualizados pelo GitHub Actions. São endpoints para consumo dos aplicativos, não uma API de consultas dinâmicas.</p>
+      <div class="section-title"><h2 id="titulo-projeto">Opção 1: serviço centralizado (coleta diária às 18h)</h2></div>
+      <p class="section-description">Os aplicativos podem consultar diretamente os JSONs públicos do GitHub Pages. O GitHub Actions agenda a coleta às 18h, no horário de Fortaleza; a execução real pode sofrer atrasos. Não é uma cotação continuamente atualizada nem uma API dinâmica.</p>
       <div class="cards">
         <article class="card link-card">
-          <h3>Última cotação armazenada</h3>
+          <h3>Últimas cotações do projeto</h3>
           <p>Inclui comercial e PTAX, compra, venda, horários e metadados da coleta.</p>
           <code>https://mateusrodrigo.github.io/cotacoes-cambiais/cotacao.json</code>
           <div class="link-actions"><a class="btn" href="cotacao.json" target="_blank" rel="noopener noreferrer">Abrir cotacao.json</a></div>
         </article>
         <article class="card link-card">
-          <h3>Histórico consolidado</h3>
+          <h3>Histórico do projeto</h3>
           <p>Séries comerciais e PTAX organizadas por data, preservadas entre atualizações.</p>
           <code>https://mateusrodrigo.github.io/cotacoes-cambiais/historico.json</code>
           <div class="link-actions"><a class="btn" href="historico.json" target="_blank" rel="noopener noreferrer">Abrir historico.json</a></div>
@@ -161,14 +161,22 @@
     </section>
 
     <section aria-labelledby="titulo-fontes">
-      <div class="section-title"><h2 id="titulo-fontes">APIs das fontes originais</h2></div>
-      <p class="section-description">Links diretos para os provedores externos. Os aplicativos podem consumir apenas os JSONs centralizados acima, sem compartilhar a chave da AwesomeAPI.</p>
+      <div class="section-title"><h2 id="titulo-fontes">Consultas diretas às APIs de origem</h2></div>
+      <p class="section-description">Além dos JSONs do projeto, você pode acessar diretamente os provedores abaixo. A AwesomeAPI é uma empresa privada e fornece cotações de mercado e PTAX; o Banco Central é a fonte oficial da PTAX. Esses links são independentes da coleta das 18h.</p>
       <div class="source-grid">
         <article class="card">
-          <h3>AwesomeAPI</h3>
-          <p class="muted">Fonte utilizada na coleta programada das cotações comercial e PTAX.</p>
+          <h3>Opção 2: AwesomeAPI (consulta direta)</h3>
+          <p class="muted">Cotações mais recentes disponíveis no provedor. Cada par pode ter horário de atualização diferente. Os links abrem o JSON no navegador, sem usar a chave secreta do projeto.</p>
           <div class="url-row">
-            <span class="url-label">Últimas cotações, comercial + PTAX</span>
+            <span class="url-label">Último dólar comercial (USD-BRL)</span>
+            <a href="https://economia.awesomeapi.com.br/json/last/USD-BRL" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/last/USD-BRL</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Última PTAX informada pela AwesomeAPI (USD-BRLPTAX)</span>
+            <a href="https://economia.awesomeapi.com.br/json/last/USD-BRLPTAX" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/last/USD-BRLPTAX</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Ambas em uma requisição (comercial + PTAX)</span>
             <a href="https://economia.awesomeapi.com.br/json/last/USD-BRL,USD-BRLPTAX" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/last/USD-BRL,USD-BRLPTAX</a>
           </div>
           <div class="url-row">
@@ -176,17 +184,17 @@
             <a href="https://economia.awesomeapi.com.br/json/daily/USD-BRL/30" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/daily/USD-BRL/30</a>
           </div>
           <div class="url-row">
-            <span class="url-label">Histórico PTAX (30 registros)</span>
+            <span class="url-label">Histórico PTAX (30 registros, sujeito à disponibilidade)</span>
             <a href="https://economia.awesomeapi.com.br/json/daily/USD-BRLPTAX/30" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/daily/USD-BRLPTAX/30</a>
           </div>
           <div class="url-row">
-            <span class="url-label">Documentação</span>
-            <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">Documentação oficial da AwesomeAPI</a>
+            <span class="url-label">Documentação da AwesomeAPI</span>
+            <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">Consultar documentação e condições de acesso</a>
           </div>
         </article>
         <article class="card">
-          <h3>Banco Central do Brasil</h3>
-          <p class="muted">Fonte oficial da PTAX. Os endpoints SGS abaixo retornam o último fechamento disponível, separadamente para compra e venda.</p>
+          <h3>Opção 3: Banco Central (fonte oficial)</h3>
+          <p class="muted">PTAX oficial de fechamento, publicada nos dias úteis. As séries SGS são diárias e não equivalem a uma cotação comercial de mercado em tempo real.</p>
           <div class="url-row">
             <span class="url-label">Última PTAX de compra (SGS 10813)</span>
             <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/1?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/1?formato=json</a>
@@ -196,11 +204,20 @@
             <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/1?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/1?formato=json</a>
           </div>
           <div class="url-row">
-            <span class="url-label">API Olinda: PTAX por dia ou período</span>
+            <span class="url-label">Últimos 10 fechamentos de compra</span>
+            <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/10?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/10?formato=json</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Últimos 10 fechamentos de venda</span>
+            <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">API Olinda: PTAX por dia ou período, compra e venda juntas</span>
             <a href="https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao" target="_blank" rel="noopener noreferrer">Documentação oficial da API PTAX</a>
           </div>
         </article>
       </div>
+      <div class="info"><strong>Qual fonte escolher?</strong> Use os JSONs deste projeto para obter os registros padronizados capturados na rotina diária. Use a AwesomeAPI diretamente quando precisar verificar a última cotação de mercado disponível. Use o Banco Central quando precisar confirmar a PTAX oficial. O acesso às APIs externas está sujeito às condições de cada provedor; não exponha a chave da AwesomeAPI em páginas públicas.</div>
     </section>
   </main>
 
