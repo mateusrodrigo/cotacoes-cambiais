@@ -3,7 +3,7 @@ name: Atualizar cotações cambiais
 on:
   workflow_dispatch:
   schedule:
-    # Diariamente às 21:00 UTC (18:00 em Fortaleza).
+    # Diariamente às 21:00 UTC, equivalente a 18:00 em Fortaleza.
     - cron: "0 21 * * *"
 
 permissions:
@@ -24,18 +24,18 @@ jobs:
 
     steps:
       - name: Baixar repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: true
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Consultar e atualizar histórico
+      - name: Consultar AwesomeAPI e Banco Central
         env:
           AWESOME_API_KEY: ${{ secrets.AWESOME_API_KEY }}
         run: python scripts/atualizar.py
@@ -50,7 +50,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sem mudanças nos arquivos de cotação."
           else
-            git commit -m "Atualização automática de cotações"
+            git commit -m "Atualização automática: comercial e PTAX oficial"
             for tentativa in 1 2 3; do
               git fetch origin main
               git rebase origin/main
@@ -59,7 +59,7 @@ jobs:
                 break
               fi
               if [ "$tentativa" -eq 3 ]; then
-                echo "::error::Não foi possível enviar após 3 tentativas."
+                echo "::error::Falha ao publicar os dados após 3 tentativas."
                 exit 1
               fi
               sleep "$((tentativa * 2))"
