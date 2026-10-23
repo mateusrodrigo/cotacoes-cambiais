@@ -79,7 +79,7 @@
     <div class="container">
       <div class="eyebrow">Projeto Cotações Cambiais</div>
       <h1>USD/BRL: cotações e dados públicos</h1>
-      <p>Três formas de consultar USD/BRL: os dados centralizados pelo projeto, a AwesomeAPI diretamente ou a PTAX oficial no Banco Central. Os arquivos JSON do projeto são próprios para integração com aplicativos.</p>
+      <p>Três formas de consultar USD/BRL: registros centralizados do projeto, cotação de mercado da AwesomeAPI e PTAX de fechamento confirmada pelo Banco Central. Os JSONs podem ser consumidos por aplicativos.</p>
       <div class="header-bottom">
         <span class="chip"><span class="dot"></span> Atualização programada: diariamente, 18h (Fortaleza)</span>
         <span id="estado" class="chip" role="status" aria-live="polite">Carregando arquivos publicados...</span>
@@ -105,7 +105,7 @@
           <div class="meta" id="comercial-data">Aguardando cotação.</div>
         </article>
         <article class="card">
-          <div class="card-top"><h3>PTAX</h3><span class="tag">Referência BCB</span></div>
+          <div class="card-top"><h3>PTAX de fechamento</h3><span class="tag">BCB confirmado</span></div>
           <div class="price" id="ptax-compra">...</div>
           <div class="price-caption">Compra (USD 1,00 em BRL)</div>
           <div class="price-detail">
@@ -116,7 +116,7 @@
         </article>
       </div>
       <div class="info">
-        <strong>Atenção às datas:</strong> “última cotação” significa o registro mais recente armazenado pelo projeto, não uma consulta de mercado em tempo real. Dólar comercial e PTAX podem ter datas de referência distintas. As taxas são indicativas, não necessariamente as praticadas em uma operação de câmbio.
+        <strong>Atenção às datas:</strong> o dólar comercial é a última amostra capturada pela AwesomeAPI; a PTAX é exclusivamente o último boletim de <strong>fechamento</strong> confirmado pelo Banco Central. Em dias não úteis ou antes da divulgação do fechamento, a PTAX pode ser de um dia anterior. Nenhuma dessas cotações equivale à taxa negociada com um banco.
         <div id="data-coleta" style="margin-top:5px"></div>
       </div>
     </section>
@@ -127,13 +127,13 @@
       <div class="cards">
         <article class="card link-card">
           <h3>Últimas cotações do projeto</h3>
-          <p>Inclui comercial e PTAX, compra, venda, horários e metadados da coleta.</p>
+          <p>Inclui o último registro comercial coletado e a última PTAX de fechamento oficialmente confirmada, cada qual com sua data e sua fonte.</p>
           <code>https://mateusrodrigo.github.io/cotacoes-cambiais/cotacao.json</code>
           <div class="link-actions"><a class="btn" href="cotacao.json" target="_blank" rel="noopener noreferrer">Abrir cotacao.json</a></div>
         </article>
         <article class="card link-card">
           <h3>Histórico do projeto</h3>
-          <p>Séries comerciais e PTAX organizadas por data, preservadas entre atualizações.</p>
+          <p>Histórico comercial acumulado desde as coletas do projeto e histórico oficial PTAX, preenchido retroativamente pelo Banco Central.</p>
           <code>https://mateusrodrigo.github.io/cotacoes-cambiais/historico.json</code>
           <div class="link-actions"><a class="btn" href="historico.json" target="_blank" rel="noopener noreferrer">Abrir historico.json</a></div>
         </article>
@@ -145,8 +145,8 @@
         <h2 id="titulo-historico">Histórico diário armazenado</h2>
         <label for="tipo-historico" class="visually-hidden">Série histórica</label>
         <select id="tipo-historico" aria-label="Selecionar série histórica">
-          <option value="comercial">Dólar comercial</option>
-          <option value="ptax">PTAX</option>
+          <option value="comercial">Dólar comercial (amostras do projeto)</option>
+          <option value="ptax">PTAX (fechamento oficial)</option>
         </select>
       </div>
       <div class="card" style="padding:0; overflow:hidden">
@@ -157,16 +157,16 @@
           </table>
         </div>
       </div>
-      <p class="small-print" style="margin-top:10px">Exibidos até 15 registros mais recentes. Para acessar o histórico completo, utilize o arquivo historico.json.</p>
+      <p class="small-print" style="margin-top:10px">Exibidos até 15 registros. A série comercial reflete capturas efetivas do serviço, não um histórico oficial de fechamento. A série PTAX contém apenas boletins de fechamento oficiais. Para acessar tudo, utilize historico.json.</p>
     </section>
 
     <section aria-labelledby="titulo-fontes">
       <div class="section-title"><h2 id="titulo-fontes">Consultas diretas às APIs de origem</h2></div>
-      <p class="section-description">Além dos JSONs do projeto, você pode acessar diretamente os provedores abaixo. A AwesomeAPI é uma empresa privada e fornece cotações de mercado e PTAX; o Banco Central é a fonte oficial da PTAX. Esses links são independentes da coleta das 18h.</p>
+      <p class="section-description">Links diretos, independentes do agendamento das 18h. Na geração dos JSONs do projeto, a AwesomeAPI fornece apenas o dólar comercial e o Banco Central fornece a PTAX de fechamento e seu histórico.</p>
       <div class="source-grid">
         <article class="card">
           <h3>Opção 2: AwesomeAPI (consulta direta)</h3>
-          <p class="muted">Cotações mais recentes disponíveis no provedor. Cada par pode ter horário de atualização diferente. Os links abrem o JSON no navegador, sem usar a chave secreta do projeto.</p>
+          <p class="muted">A cotação comercial de mercado é utilizada pelo serviço centralizado. A AwesomeAPI também oferece PTAX para consulta direta, mas não é a fonte da PTAX publicada pelo projeto. Os links não revelam a chave secreta do GitHub.</p>
           <div class="url-row">
             <span class="url-label">Último dólar comercial (USD-BRL)</span>
             <a href="https://economia.awesomeapi.com.br/json/last/USD-BRL" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/last/USD-BRL</a>
@@ -194,7 +194,11 @@
         </article>
         <article class="card">
           <h3>Opção 3: Banco Central (fonte oficial)</h3>
-          <p class="muted">PTAX oficial de fechamento, publicada nos dias úteis. As séries SGS são diárias e não equivalem a uma cotação comercial de mercado em tempo real.</p>
+          <p class="muted">Fonte efetivamente usada pelo projeto para recuperar e validar a PTAX de fechamento e seu histórico. Os links SGS oferecem a mesma referência diária para compra e venda separadamente.</p>
+          <div class="url-row">
+            <span class="url-label">Fechamentos PTAX USD (compra e venda juntas, últimos 30 dias)</span>
+            <a id="bcb-fechamentos" href="https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao" target="_blank" rel="noopener noreferrer">Abrir consulta oficial de fechamentos</a>
+          </div>
           <div class="url-row">
             <span class="url-label">Última PTAX de compra (SGS 10813)</span>
             <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/1?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/1?formato=json</a>
@@ -217,7 +221,7 @@
           </div>
         </article>
       </div>
-      <div class="info"><strong>Qual fonte escolher?</strong> Use os JSONs deste projeto para obter os registros padronizados capturados na rotina diária. Use a AwesomeAPI diretamente quando precisar verificar a última cotação de mercado disponível. Use o Banco Central quando precisar confirmar a PTAX oficial. O acesso às APIs externas está sujeito às condições de cada provedor; não exponha a chave da AwesomeAPI em páginas públicas.</div>
+      <div class="info"><strong>Qual fonte escolher?</strong> Use os JSONs deste projeto para obter a amostra comercial diária e a PTAX oficial consolidada. Consulte a AwesomeAPI diretamente para observar o mercado mais recentemente ou o BCB para conferir os boletins PTAX. Para negociações reais, confirme a taxa efetiva com a instituição financeira. O acesso às APIs externas está sujeito às condições de cada provedor; não exponha a chave da AwesomeAPI em páginas públicas.</div>
     </section>
   </main>
 
@@ -251,7 +255,9 @@
       $(tipo + "-compra").textContent = real(registro.compra);
       $(tipo + "-venda").textContent = real(registro.venda);
       $(tipo + "-variacao").textContent = percentual(registro.variacao_percentual);
-      $(tipo + "-data").textContent = `Referência: ${dataHoraBR(registro.data_hora)} (Fortaleza) · Data: ${dataBR(registro.data)}`;
+      const confirmado = tipo === "ptax" && registro.confirmada === true && registro.tipo_boletim === "Fechamento";
+      $(tipo + "-data").textContent = `Referência: ${dataHoraBR(registro.data_hora)} (Fortaleza) · Data: ${dataBR(registro.data)}`
+        + (tipo === "ptax" ? (confirmado ? " · Fechamento confirmado pelo BCB" : " · Fechamento não validado") : " · Amostra de mercado");
     }
 
     function preencherHistorico() {
@@ -308,6 +314,23 @@
       $("recarregar").disabled = false;
     }
 
+    // Gera a consulta pública Olinda para os últimos 30 dias, sem expor segredos.
+    function ligarConsultaBcb() {
+      const fim = new Date();
+      const inicio = new Date(fim.getTime() - 30 * 86400000);
+      const mmddaaaa = (d) => [String(d.getUTCMonth() + 1).padStart(2, "0"), String(d.getUTCDate()).padStart(2, "0"), d.getUTCFullYear()].join("-");
+      const params = new URLSearchParams({
+        "@codigoMoeda": "'USD'",
+        "@dataInicialCotacao": `'${mmddaaaa(inicio)}'`,
+        "@dataFinalCotacao": `'${mmddaaaa(fim)}'`,
+        "$format": "json",
+        "$top": "1000"
+      });
+      $("bcb-fechamentos").href = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/"
+        + "CotacaoMoedaPeriodoFechamento(codigoMoeda=@codigoMoeda,dataInicialCotacao=@dataInicialCotacao,dataFinalCotacao=@dataFinalCotacao)?"
+        + params.toString();
+    }
+    ligarConsultaBcb();
     $("tipo-historico").addEventListener("change", preencherHistorico);
     $("recarregar").addEventListener("click", carregar);
     carregar();
