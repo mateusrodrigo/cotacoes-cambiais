@@ -3,14 +3,297 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cotações Cambiais USD/BRL</title>
+  <meta name="description" content="Cotações USD/BRL, histórico diário e documentação dos endpoints públicos do projeto Cotações Cambiais.">
+  <meta name="color-scheme" content="light">
+  <title>Cotações Cambiais | USD/BRL</title>
+  <style>
+    :root {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #192840;
+      background: #f3f6fb;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.55; }
+    a { color: #185eaf; text-underline-offset: 3px; }
+    a:hover { color: #08417f; }
+    .container { width: min(1080px, calc(100% - 36px)); margin: auto; }
+    header { color: #fff; background: linear-gradient(120deg, #102a49 0%, #174b7b 100%); padding: 44px 0 45px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .11em; font-size: .75rem; font-weight: 750; opacity: .83; }
+    h1 { font-size: clamp(1.9rem, 4vw, 2.65rem); line-height: 1.18; margin: 9px 0 12px; }
+    header p { max-width: 760px; margin: 0; color: #d4e6f6; }
+    .header-bottom { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+    .chip { display: inline-flex; gap: 7px; align-items: center; font-size: .84rem; padding: 6px 11px; border-radius: 99px; background: #e7eef7; color: #334d69; }
+    header .chip { background: #ffffff1c; color: #e2eaf6; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .65; }
+    main { padding: 28px 0 42px; }
+    section { margin-bottom: 30px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 13px; flex-wrap: wrap; }
+    h2 { font-size: 1.26rem; margin: 0; letter-spacing: -.025em; }
+    h3 { font-size: 1.07rem; margin: 0 0 7px; }
+    p { margin: 0 0 12px; }
+    .muted { color: #63758a; font-size: .89rem; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { background: #fff; border: 1px solid #dee6f0; box-shadow: 0 4px 14px #2542680a; border-radius: 15px; padding: 21px; min-width: 0; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .tag { font-size: .76rem; font-weight: 750; color: #1b5c99; background: #eaf3fb; padding: 4px 10px; border-radius: 99px; }
+    .price { font-size: clamp(1.9rem, 4.3vw, 2.6rem); font-weight: 780; line-height: 1.25; letter-spacing: -.04em; margin: 14px 0 2px; font-variant-numeric: tabular-nums; }
+    .price-caption { font-size: .83rem; color: #63758a; }
+    .price-detail { display: flex; gap: 14px; flex-wrap: wrap; border-top: 1px solid #e9eef5; margin-top: 17px; padding-top: 13px; font-size: .9rem; }
+    .price-detail strong { font-variant-numeric: tabular-nums; }
+    .meta { color: #63758a; font-size: .82rem; margin-top: 13px; }
+    .info { background: #edf4fb; border: 1px solid #d3e5f5; border-radius: 11px; padding: 13px 16px; margin-top: 14px; font-size: .88rem; color: #37536f; }
+    .btn { border: 1px solid #b6cce2; border-radius: 9px; background: #fff; color: #174b7b; padding: 8px 12px; font: inherit; font-size: .87rem; font-weight: 650; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn:hover { background: #f0f6fd; }
+    .link-card { display: flex; flex-direction: column; gap: 7px; }
+    .link-card p { color: #63758a; font-size: .88rem; margin: 0; }
+    .link-card code { color: #27425d; background: #f0f4f8; border-radius: 7px; font-size: .78rem; padding: 9px 10px; word-break: break-all; overflow-wrap: anywhere; }
+    .link-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 3px; }
+    .source-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .link-list { display: grid; gap: 16px; }
+    .url-row { padding: 12px 0; border-bottom: 1px solid #e8edf4; }
+    .url-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .url-row:first-child { padding-top: 0; }
+    .url-label { display: block; font-weight: 650; font-size: .9rem; margin-bottom: 4px; }
+    .url-row a { font-size: .8rem; overflow-wrap: anywhere; word-break: break-all; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; white-space: nowrap; font-size: .88rem; }
+    th { text-align: left; background: #f3f7fb; color: #4b627a; font-size: .79rem; font-weight: 700; }
+    th, td { padding: 10px 13px; border-bottom: 1px solid #edf1f6; }
+    td:nth-child(n+2) { font-variant-numeric: tabular-nums; }
+    tbody tr:last-child td { border-bottom: 0; }
+    select { padding: 8px 11px; border: 1px solid #bfcede; border-radius: 9px; font: inherit; background: #fff; color: #192840; }
+    .section-description { color: #63758a; font-size: .89rem; margin: 0 0 13px; }
+    .small-print { color: #61758a; font-size: .81rem; }
+    footer { border-top: 1px solid #dce5ef; color: #6a7a8d; padding: 23px 0 30px; font-size: .83rem; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 720px) {
+      header { padding: 31px 0; }
+      .cards, .source-grid { grid-template-columns: 1fr; }
+      .card { padding: 18px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Cotações Cambiais USD/BRL</h1>
-  <p>Dados indicativos obtidos da AwesomeAPI. Confira a data do registro antes de utilizar.</p>
-  <ul>
-    <li><a href="cotacao.json">Última cotação registrada</a></li>
-    <li><a href="historico.json">Histórico diário</a></li>
-  </ul>
+  <header>
+    <div class="container">
+      <div class="eyebrow">Projeto Cotações Cambiais</div>
+      <h1>USD/BRL: cotações e dados públicos</h1>
+      <p>Consulta centralizada de dólar comercial e PTAX, com histórico diário e acesso às fontes utilizadas. Dados disponibilizados em arquivos JSON para integração com aplicativos.</p>
+      <div class="header-bottom">
+        <span class="chip"><span class="dot"></span> Atualização programada: diariamente, 18h (Fortaleza)</span>
+        <span id="estado" class="chip" role="status" aria-live="polite">Carregando arquivos publicados...</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="titulo-cotacoes">
+      <div class="section-title">
+        <h2 id="titulo-cotacoes">Últimas cotações registradas</h2>
+        <button class="btn" id="recarregar" type="button">Recarregar dados</button>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><h3>Dólar comercial</h3><span class="tag">Mercado</span></div>
+          <div class="price" id="comercial-compra">...</div>
+          <div class="price-caption">Compra (USD 1,00 em BRL)</div>
+          <div class="price-detail">
+            <span>Venda: <strong id="comercial-venda">...</strong></span>
+            <span>Variação: <strong id="comercial-variacao">...</strong></span>
+          </div>
+          <div class="meta" id="comercial-data">Aguardando cotação.</div>
+        </article>
+        <article class="card">
+          <div class="card-top"><h3>PTAX</h3><span class="tag">Referência BCB</span></div>
+          <div class="price" id="ptax-compra">...</div>
+          <div class="price-caption">Compra (USD 1,00 em BRL)</div>
+          <div class="price-detail">
+            <span>Venda: <strong id="ptax-venda">...</strong></span>
+            <span>Variação: <strong id="ptax-variacao">...</strong></span>
+          </div>
+          <div class="meta" id="ptax-data">Aguardando cotação.</div>
+        </article>
+      </div>
+      <div class="info">
+        <strong>Atenção às datas:</strong> “última cotação” significa o registro mais recente armazenado pelo projeto, não uma consulta de mercado em tempo real. Dólar comercial e PTAX podem ter datas de referência distintas. As taxas são indicativas, não necessariamente as praticadas em uma operação de câmbio.
+        <div id="data-coleta" style="margin-top:5px"></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-projeto">
+      <div class="section-title"><h2 id="titulo-projeto">Endpoints públicos deste projeto</h2></div>
+      <p class="section-description">O GitHub Pages publica arquivos JSON estáticos, atualizados pelo GitHub Actions. São endpoints para consumo dos aplicativos, não uma API de consultas dinâmicas.</p>
+      <div class="cards">
+        <article class="card link-card">
+          <h3>Última cotação armazenada</h3>
+          <p>Inclui comercial e PTAX, compra, venda, horários e metadados da coleta.</p>
+          <code>https://mateusrodrigo.github.io/cotacoes-cambiais/cotacao.json</code>
+          <div class="link-actions"><a class="btn" href="cotacao.json" target="_blank" rel="noopener noreferrer">Abrir cotacao.json</a></div>
+        </article>
+        <article class="card link-card">
+          <h3>Histórico consolidado</h3>
+          <p>Séries comerciais e PTAX organizadas por data, preservadas entre atualizações.</p>
+          <code>https://mateusrodrigo.github.io/cotacoes-cambiais/historico.json</code>
+          <div class="link-actions"><a class="btn" href="historico.json" target="_blank" rel="noopener noreferrer">Abrir historico.json</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-historico">
+      <div class="section-title">
+        <h2 id="titulo-historico">Histórico diário armazenado</h2>
+        <label for="tipo-historico" class="visually-hidden">Série histórica</label>
+        <select id="tipo-historico" aria-label="Selecionar série histórica">
+          <option value="comercial">Dólar comercial</option>
+          <option value="ptax">PTAX</option>
+        </select>
+      </div>
+      <div class="card" style="padding:0; overflow:hidden">
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Data</th><th>Compra (R$)</th><th>Venda (R$)</th><th>Variação (%)</th><th>Horário de referência</th></tr></thead>
+            <tbody id="historico-corpo"><tr><td colspan="5">Carregando histórico...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="small-print" style="margin-top:10px">Exibidos até 15 registros mais recentes. Para acessar o histórico completo, utilize o arquivo historico.json.</p>
+    </section>
+
+    <section aria-labelledby="titulo-fontes">
+      <div class="section-title"><h2 id="titulo-fontes">APIs das fontes originais</h2></div>
+      <p class="section-description">Links diretos para os provedores externos. Os aplicativos podem consumir apenas os JSONs centralizados acima, sem compartilhar a chave da AwesomeAPI.</p>
+      <div class="source-grid">
+        <article class="card">
+          <h3>AwesomeAPI</h3>
+          <p class="muted">Fonte utilizada na coleta programada das cotações comercial e PTAX.</p>
+          <div class="url-row">
+            <span class="url-label">Últimas cotações, comercial + PTAX</span>
+            <a href="https://economia.awesomeapi.com.br/json/last/USD-BRL,USD-BRLPTAX" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/last/USD-BRL,USD-BRLPTAX</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Histórico comercial (30 registros)</span>
+            <a href="https://economia.awesomeapi.com.br/json/daily/USD-BRL/30" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/daily/USD-BRL/30</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Histórico PTAX (30 registros)</span>
+            <a href="https://economia.awesomeapi.com.br/json/daily/USD-BRLPTAX/30" target="_blank" rel="noopener noreferrer">https://economia.awesomeapi.com.br/json/daily/USD-BRLPTAX/30</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Documentação</span>
+            <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">Documentação oficial da AwesomeAPI</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Banco Central do Brasil</h3>
+          <p class="muted">Fonte oficial da PTAX. Os endpoints SGS abaixo retornam o último fechamento disponível, separadamente para compra e venda.</p>
+          <div class="url-row">
+            <span class="url-label">Última PTAX de compra (SGS 10813)</span>
+            <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/1?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados/ultimos/1?formato=json</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">Última PTAX de venda (SGS 1)</span>
+            <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/1?formato=json" target="_blank" rel="noopener noreferrer">https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/1?formato=json</a>
+          </div>
+          <div class="url-row">
+            <span class="url-label">API Olinda: PTAX por dia ou período</span>
+            <a href="https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/documentacao" target="_blank" rel="noopener noreferrer">Documentação oficial da API PTAX</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">Projeto Cotações Cambiais · Dados indicativos para consulta e integração. Confira a data de referência, a finalidade da operação e as condições de uso dos provedores antes de utilizar os valores.</div></footer>
+
+  <script>
+    "use strict";
+    const $ = (id) => document.getElementById(id);
+    const real = (valor) => typeof valor === "number" && Number.isFinite(valor)
+      ? valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 4, maximumFractionDigits: 4 })
+      : "Indisponível";
+    const decimal = (valor) => typeof valor === "number" && Number.isFinite(valor)
+      ? valor.toLocaleString("pt-BR", { minimumFractionDigits: 4, maximumFractionDigits: 4 })
+      : "-";
+    const dataBR = (iso) => typeof iso === "string" && /^\d{4}-\d\d-\d\d$/.test(iso)
+      ? iso.slice(8, 10) + "/" + iso.slice(5, 7) + "/" + iso.slice(0, 4)
+      : "Indisponível";
+    const dataHoraBR = (iso) => {
+      const instante = new Date(iso);
+      return typeof iso === "string" && !Number.isNaN(instante.getTime())
+        ? new Intl.DateTimeFormat("pt-BR", { timeZone: "America/Fortaleza", dateStyle: "short", timeStyle: "short" }).format(instante)
+        : "Indisponível";
+    };
+    const percentual = (valor) => typeof valor === "number" && Number.isFinite(valor)
+      ? `${valor > 0 ? "+" : ""}${valor.toLocaleString("pt-BR", { maximumFractionDigits: 3 })}%`
+      : "-";
+    let historico = null;
+
+    function preencherCotacao(tipo, registro) {
+      if (!registro || typeof registro !== "object") return;
+      $(tipo + "-compra").textContent = real(registro.compra);
+      $(tipo + "-venda").textContent = real(registro.venda);
+      $(tipo + "-variacao").textContent = percentual(registro.variacao_percentual);
+      $(tipo + "-data").textContent = `Referência: ${dataHoraBR(registro.data_hora)} (Fortaleza) · Data: ${dataBR(registro.data)}`;
+    }
+
+    function preencherHistorico() {
+      const corpo = $("historico-corpo");
+      const tipo = $("tipo-historico").value;
+      const registros = historico && Array.isArray(historico[tipo]) ? historico[tipo] : [];
+      corpo.replaceChildren();
+      if (!registros.length) {
+        const tr = corpo.insertRow();
+        const td = tr.insertCell();
+        td.colSpan = 5;
+        td.textContent = "Nenhum registro disponível para esta série.";
+        return;
+      }
+      for (const item of [...registros].sort((a, b) => (b.data || "").localeCompare(a.data || "")).slice(0, 15)) {
+        const linha = corpo.insertRow();
+        const valores = [dataBR(item.data), decimal(item.compra), decimal(item.venda), percentual(item.variacao_percentual), dataHoraBR(item.data_hora)];
+        valores.forEach((valor) => { linha.insertCell().textContent = valor; });
+      }
+    }
+
+    async function buscarJson(arquivo) {
+      const resposta = await fetch(`${arquivo}?v=${Date.now()}`, { cache: "no-store" });
+      if (!resposta.ok) throw new Error(`${arquivo}: HTTP ${resposta.status}`);
+      return resposta.json();
+    }
+
+    async function carregar() {
+      $("estado").textContent = "Consultando arquivos publicados...";
+      $("recarregar").disabled = true;
+      const [resultadoCotacao, resultadoHistorico] = await Promise.allSettled([
+        buscarJson("cotacao.json"), buscarJson("historico.json")
+      ]);
+      let sucesso = 0;
+      if (resultadoCotacao.status === "fulfilled") {
+        const dados = resultadoCotacao.value;
+        if (dados && dados.comercial && dados.ptax) {
+          preencherCotacao("comercial", dados.comercial);
+          preencherCotacao("ptax", dados.ptax);
+          $("data-coleta").textContent = `Última execução da coleta: ${dataHoraBR(dados.coletado_em)} (Fortaleza).`;
+          sucesso++;
+        }
+      }
+      if (resultadoHistorico.status === "fulfilled") {
+        const dados = resultadoHistorico.value;
+        if (dados && typeof dados === "object" && !Array.isArray(dados)) {
+          historico = dados;
+          preencherHistorico();
+          sucesso++;
+        }
+      }
+      $("estado").textContent = sucesso === 2 ? "Dados publicados carregados" : sucesso === 1
+        ? "Carregamento parcial; confira os JSONs" : "Dados indisponíveis; confira os arquivos JSON";
+      $("recarregar").disabled = false;
+    }
+
+    $("tipo-historico").addEventListener("change", preencherHistorico);
+    $("recarregar").addEventListener("click", carregar);
+    carregar();
+  </script>
 </body>
 </html>
