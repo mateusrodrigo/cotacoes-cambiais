@@ -7,6 +7,8 @@
       "timestamp": 1788989386,
       "compra": 5.1048,
       "venda": 5.1051,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1148,
       "minima": 5.0809,
       "variacao": 0.0181,
@@ -18,6 +20,8 @@
       "timestamp": 1789079406,
       "compra": 5.1033,
       "venda": 5.1037,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1445,
       "minima": 5.0832,
       "variacao": -0.0015,
@@ -29,6 +33,8 @@
       "timestamp": 1789165806,
       "compra": 5.1262,
       "venda": 5.1266,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1315,
       "minima": 5.0711,
       "variacao": 0.0229,
@@ -40,6 +46,8 @@
       "timestamp": 1789425006,
       "compra": 5.1435,
       "venda": 5.1438,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1809,
       "minima": 5.1262,
       "variacao": 0.0173,
@@ -51,6 +59,8 @@
       "timestamp": 1789511467,
       "compra": 5.1529,
       "venda": 5.1533,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1612,
       "minima": 5.1266,
       "variacao": 0.0094,
@@ -62,6 +72,8 @@
       "timestamp": 1789597805,
       "compra": 5.1499,
       "venda": 5.1506,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1661,
       "minima": 5.137,
       "variacao": -0.003,
@@ -73,6 +85,8 @@
       "timestamp": 1789684207,
       "compra": 5.1245,
       "venda": 5.1248,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1728,
       "minima": 5.1231,
       "variacao": -0.0254,
@@ -84,6 +98,8 @@
       "timestamp": 1789766968,
       "compra": 5.1432,
       "venda": 5.1436,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1657,
       "minima": 5.1233,
       "variacao": 0.0187,
@@ -95,6 +111,8 @@
       "timestamp": 1789941603,
       "compra": 5.1442,
       "venda": 5.1446,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1442,
       "minima": 5.1432,
       "variacao": 0.001,
@@ -106,6 +124,8 @@
       "timestamp": 1790029805,
       "compra": 5.1115,
       "venda": 5.1118,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1442,
       "minima": 5.1032,
       "variacao": -0.0327,
@@ -117,6 +137,8 @@
       "timestamp": 1790112574,
       "compra": 5.1018,
       "venda": 5.103,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1353,
       "minima": 5.095,
       "variacao": -0.0097,
@@ -128,6 +150,8 @@
       "timestamp": 1790202606,
       "compra": 5.1641,
       "venda": 5.1647,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.1742,
       "minima": 5.1018,
       "variacao": 0.0623,
@@ -139,6 +163,8 @@
       "timestamp": 1790289004,
       "compra": 5.1916,
       "venda": 5.1926,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2003,
       "minima": 5.1641,
       "variacao": 0.0275,
@@ -150,6 +176,8 @@
       "timestamp": 1790371783,
       "compra": 5.1894,
       "venda": 5.1906,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2131,
       "minima": 5.1728,
       "variacao": -0.0022,
@@ -161,6 +189,8 @@
       "timestamp": 1790634605,
       "compra": 5.223,
       "venda": 5.2234,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2302,
       "minima": 5.1802,
       "variacao": 0.0336,
@@ -172,6 +202,8 @@
       "timestamp": 1790717105,
       "compra": 5.2031,
       "venda": 5.2043,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2406,
       "minima": 5.1976,
       "variacao": -0.0199,
@@ -183,6 +215,8 @@
       "timestamp": 1790807485,
       "compra": 5.184,
       "venda": 5.1844,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2138,
       "minima": 5.1633,
       "variacao": -0.0191,
@@ -194,6 +228,8 @@
       "timestamp": 1790890065,
       "compra": 5.2271,
       "venda": 5.2274,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2366,
       "minima": 5.1702,
       "variacao": 0.0431,
@@ -205,6 +241,8 @@
       "timestamp": 1790975871,
       "compra": 5.2162,
       "venda": 5.2173,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.2376,
       "minima": 5.1987,
       "variacao": -0.0109,
@@ -216,6 +254,8 @@
       "timestamp": 1791151203,
       "compra": 5.222,
       "venda": 5.2233,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.222,
       "minima": 5.2162,
       "variacao": 0.0058,
@@ -227,6 +267,8 @@
       "timestamp": 1791239406,
       "compra": 4.9988,
       "venda": 4.9993,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.222,
       "minima": 4.9529,
       "variacao": -0.2232,
@@ -238,6 +280,8 @@
       "timestamp": 1791325806,
       "compra": 4.9825,
       "venda": 4.9829,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 4.9988,
       "minima": 4.9453,
       "variacao": -0.0163,
@@ -249,6 +293,8 @@
       "timestamp": 1791412316,
       "compra": 5.0221,
       "venda": 5.0232,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.025,
       "minima": 4.9817,
       "variacao": 0.0396,
@@ -260,6 +306,8 @@
       "timestamp": 1791498607,
       "compra": 5.0179,
       "venda": 5.0183,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.026,
       "minima": 4.9999,
       "variacao": -0.0042,
@@ -271,6 +319,8 @@
       "timestamp": 1791585005,
       "compra": 4.9918,
       "venda": 4.9924,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0179,
       "minima": 4.9761,
       "variacao": -0.0261,
@@ -282,6 +332,8 @@
       "timestamp": 1791756002,
       "compra": 4.9918,
       "venda": 4.9924,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 4.9918,
       "minima": 4.9918,
       "variacao": 0.0,
@@ -293,6 +345,8 @@
       "timestamp": 1791815237,
       "compra": 4.9863,
       "venda": 4.9876,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 4.9918,
       "minima": 4.9862,
       "variacao": -0.0055,
@@ -304,6 +358,8 @@
       "timestamp": 1791930605,
       "compra": 5.0266,
       "venda": 5.0269,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0286,
       "minima": 4.9852,
       "variacao": 0.0403,
@@ -315,6 +371,8 @@
       "timestamp": 1792013384,
       "compra": 5.0479,
       "venda": 5.0483,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0539,
       "minima": 5.0179,
       "variacao": 0.0213,
@@ -326,6 +384,8 @@
       "timestamp": 1792103405,
       "compra": 5.098,
       "venda": 5.0985,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0991,
       "minima": 5.0375,
       "variacao": 0.0501,
@@ -337,6 +397,8 @@
       "timestamp": 1792184463,
       "compra": 5.0622,
       "venda": 5.0626,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.098,
       "minima": 5.0613,
       "variacao": -0.0358,
@@ -348,6 +410,8 @@
       "timestamp": 1792360803,
       "compra": 5.0645,
       "venda": 5.0649,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0645,
       "minima": 5.0622,
       "variacao": 0.0023,
@@ -359,6 +423,8 @@
       "timestamp": 1792449006,
       "compra": 5.0402,
       "venda": 5.0405,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.065,
       "minima": 5.03,
       "variacao": -0.0243,
@@ -370,6 +436,8 @@
       "timestamp": 1792535470,
       "compra": 5.0238,
       "venda": 5.0242,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0411,
       "minima": 5.0042,
       "variacao": -0.0164,
@@ -381,6 +449,8 @@
       "timestamp": 1792621806,
       "compra": 5.0236,
       "venda": 5.0239,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0425,
       "minima": 5.0125,
       "variacao": -0.0002,
@@ -392,6 +462,8 @@
       "timestamp": 1792708204,
       "compra": 5.0523,
       "venda": 5.0527,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0533,
       "minima": 5.021,
       "variacao": 0.0287,
@@ -399,346 +471,1192 @@
     },
     {
       "data": "2026-10-23",
-      "data_hora": "2026-10-23T12:35:46-03:00",
-      "timestamp": 1792769746,
-      "compra": 5.038,
-      "venda": 5.0402,
+      "data_hora": "2026-10-23T13:16:58-03:00",
+      "timestamp": 1792772218,
+      "compra": 5.035,
+      "venda": 5.0372,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
       "maxima": 5.0543,
       "minima": 5.0287,
-      "variacao": -0.0143,
-      "variacao_percentual": -0.283039
+      "variacao": -0.0173,
+      "variacao_percentual": -0.342418
     }
   ],
   "ptax": [
     {
+      "data": "2026-06-25",
+      "compra": 5.1886,
+      "venda": 5.1892,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      }
+    },
+    {
+      "data": "2026-06-26",
+      "compra": 5.1689,
+      "venda": 5.1695,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0197,
+      "variacao_percentual": -0.379679
+    },
+    {
+      "data": "2026-06-29",
+      "compra": 5.1711,
+      "venda": 5.1717,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0022,
+      "variacao_percentual": 0.042562
+    },
+    {
+      "data": "2026-06-30",
+      "compra": 5.176,
+      "venda": 5.1766,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0049,
+      "variacao_percentual": 0.094757
+    },
+    {
+      "data": "2026-07-01",
+      "compra": 5.1944,
+      "venda": 5.195,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0184,
+      "variacao_percentual": 0.355487
+    },
+    {
+      "data": "2026-07-02",
+      "compra": 5.1939,
+      "venda": 5.1945,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0005,
+      "variacao_percentual": -0.009626
+    },
+    {
+      "data": "2026-07-03",
+      "compra": 5.1711,
+      "venda": 5.1717,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0228,
+      "variacao_percentual": -0.438976
+    },
+    {
+      "data": "2026-07-06",
+      "compra": 5.1664,
+      "venda": 5.167,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0047,
+      "variacao_percentual": -0.09089
+    },
+    {
+      "data": "2026-07-07",
+      "compra": 5.1452,
+      "venda": 5.1458,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0212,
+      "variacao_percentual": -0.410344
+    },
+    {
+      "data": "2026-07-08",
+      "compra": 5.1546,
+      "venda": 5.1552,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0094,
+      "variacao_percentual": 0.182695
+    },
+    {
+      "data": "2026-07-09",
+      "compra": 5.1323,
+      "venda": 5.1329,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0223,
+      "variacao_percentual": -0.432623
+    },
+    {
+      "data": "2026-07-10",
+      "compra": 5.1082,
+      "venda": 5.1088,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0241,
+      "variacao_percentual": -0.469575
+    },
+    {
+      "data": "2026-07-13",
+      "compra": 5.1177,
+      "venda": 5.1183,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0095,
+      "variacao_percentual": 0.185975
+    },
+    {
+      "data": "2026-07-14",
+      "compra": 5.0736,
+      "venda": 5.0742,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0441,
+      "variacao_percentual": -0.861715
+    },
+    {
+      "data": "2026-07-15",
+      "compra": 5.0721,
+      "venda": 5.0727,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0015,
+      "variacao_percentual": -0.029565
+    },
+    {
+      "data": "2026-07-16",
+      "compra": 5.0969,
+      "venda": 5.0975,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0248,
+      "variacao_percentual": 0.488949
+    },
+    {
+      "data": "2026-07-17",
+      "compra": 5.117,
+      "venda": 5.1176,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0201,
+      "variacao_percentual": 0.394357
+    },
+    {
+      "data": "2026-07-20",
+      "compra": 5.0888,
+      "venda": 5.0894,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0282,
+      "variacao_percentual": -0.551104
+    },
+    {
+      "data": "2026-07-21",
+      "compra": 5.0774,
+      "venda": 5.078,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0114,
+      "variacao_percentual": -0.224021
+    },
+    {
+      "data": "2026-07-22",
+      "compra": 5.0632,
+      "venda": 5.0638,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0142,
+      "variacao_percentual": -0.279671
+    },
+    {
+      "data": "2026-07-23",
+      "compra": 5.0801,
+      "venda": 5.0807,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0169,
+      "variacao_percentual": 0.333781
+    },
+    {
+      "data": "2026-07-24",
+      "compra": 5.066,
+      "venda": 5.0666,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0141,
+      "variacao_percentual": -0.277554
+    },
+    {
+      "data": "2026-07-27",
+      "compra": 5.0998,
+      "venda": 5.1005,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0338,
+      "variacao_percentual": 0.667193
+    },
+    {
+      "data": "2026-07-28",
+      "compra": 5.1171,
+      "venda": 5.1177,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0173,
+      "variacao_percentual": 0.339229
+    },
+    {
+      "data": "2026-07-29",
+      "compra": 5.1211,
+      "venda": 5.1217,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.004,
+      "variacao_percentual": 0.078169
+    },
+    {
+      "data": "2026-07-30",
+      "compra": 5.0733,
+      "venda": 5.0739,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0478,
+      "variacao_percentual": -0.933393
+    },
+    {
+      "data": "2026-07-31",
+      "compra": 5.0767,
+      "venda": 5.0773,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0034,
+      "variacao_percentual": 0.067018
+    },
+    {
+      "data": "2026-08-03",
+      "compra": 5.0717,
+      "venda": 5.0723,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.005,
+      "variacao_percentual": -0.098489
+    },
+    {
+      "data": "2026-08-04",
+      "compra": 5.1047,
+      "venda": 5.1053,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.033,
+      "variacao_percentual": 0.650669
+    },
+    {
+      "data": "2026-08-05",
+      "compra": 5.1148,
+      "venda": 5.1154,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0101,
+      "variacao_percentual": 0.197857
+    },
+    {
+      "data": "2026-08-06",
+      "compra": 5.1011,
+      "venda": 5.1017,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0137,
+      "variacao_percentual": -0.26785
+    },
+    {
+      "data": "2026-08-07",
+      "compra": 5.0902,
+      "venda": 5.0908,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0109,
+      "variacao_percentual": -0.213679
+    },
+    {
+      "data": "2026-08-10",
+      "compra": 5.0957,
+      "venda": 5.0963,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0055,
+      "variacao_percentual": 0.108051
+    },
+    {
+      "data": "2026-08-11",
+      "compra": 5.1279,
+      "venda": 5.1285,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0322,
+      "variacao_percentual": 0.631905
+    },
+    {
+      "data": "2026-08-12",
+      "compra": 5.1632,
+      "venda": 5.1639,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0353,
+      "variacao_percentual": 0.688391
+    },
+    {
+      "data": "2026-08-13",
+      "compra": 5.1853,
+      "venda": 5.1859,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0221,
+      "variacao_percentual": 0.428029
+    },
+    {
+      "data": "2026-08-14",
+      "compra": 5.223,
+      "venda": 5.2236,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0377,
+      "variacao_percentual": 0.727055
+    },
+    {
+      "data": "2026-08-17",
+      "compra": 5.2008,
+      "venda": 5.2014,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0222,
+      "variacao_percentual": -0.425043
+    },
+    {
+      "data": "2026-08-18",
+      "compra": 5.2037,
+      "venda": 5.2043,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0029,
+      "variacao_percentual": 0.055761
+    },
+    {
+      "data": "2026-08-19",
+      "compra": 5.1708,
+      "venda": 5.1714,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0329,
+      "variacao_percentual": -0.632242
+    },
+    {
+      "data": "2026-08-20",
+      "compra": 5.1856,
+      "venda": 5.1862,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0148,
+      "variacao_percentual": 0.286223
+    },
+    {
+      "data": "2026-08-21",
+      "compra": 5.1619,
+      "venda": 5.1625,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0237,
+      "variacao_percentual": -0.457035
+    },
+    {
+      "data": "2026-08-24",
+      "compra": 5.1506,
+      "venda": 5.1512,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0113,
+      "variacao_percentual": -0.218912
+    },
+    {
+      "data": "2026-08-25",
+      "compra": 5.1484,
+      "venda": 5.149,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0022,
+      "variacao_percentual": -0.042713
+    },
+    {
+      "data": "2026-08-26",
+      "compra": 5.1598,
+      "venda": 5.1604,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0114,
+      "variacao_percentual": 0.221428
+    },
+    {
+      "data": "2026-08-27",
+      "compra": 5.1637,
+      "venda": 5.1642,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0039,
+      "variacao_percentual": 0.075584
+    },
+    {
+      "data": "2026-08-28",
+      "compra": 5.1999,
+      "venda": 5.2005,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0362,
+      "variacao_percentual": 0.701048
+    },
+    {
+      "data": "2026-08-31",
+      "compra": 5.181,
+      "venda": 5.1816,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0189,
+      "variacao_percentual": -0.363469
+    },
+    {
+      "data": "2026-09-01",
+      "compra": 5.1564,
+      "venda": 5.157,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0246,
+      "variacao_percentual": -0.474812
+    },
+    {
+      "data": "2026-09-02",
+      "compra": 5.1267,
+      "venda": 5.1273,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0297,
+      "variacao_percentual": -0.575983
+    },
+    {
+      "data": "2026-09-03",
+      "compra": 5.0956,
+      "venda": 5.0962,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0311,
+      "variacao_percentual": -0.606628
+    },
+    {
+      "data": "2026-09-04",
+      "compra": 5.1247,
+      "venda": 5.1253,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0291,
+      "variacao_percentual": 0.571081
+    },
+    {
+      "data": "2026-09-08",
+      "compra": 5.085,
+      "venda": 5.0856,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.0397,
+      "variacao_percentual": -0.774679
+    },
+    {
+      "data": "2026-09-09",
+      "compra": 5.0973,
+      "venda": 5.0979,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.0123,
+      "variacao_percentual": 0.241888
+    },
+    {
+      "data": "2026-09-10",
+      "compra": 5.1143,
+      "venda": 5.1149,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": 0.017,
+      "variacao_percentual": 0.33351
+    },
+    {
       "data": "2026-09-11",
-      "data_hora": "2026-09-11T13:07:22-03:00",
-      "timestamp": 1789142842,
       "compra": 5.0912,
       "venda": 5.0918,
-      "maxima": 5.1143,
-      "minima": 5.0748,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0231,
-      "variacao_percentual": -0.45167
+      "variacao_percentual": -0.451675
     },
     {
       "data": "2026-09-14",
-      "data_hora": "2026-09-14T13:10:08-03:00",
-      "timestamp": 1789402208,
       "compra": 5.169,
       "venda": 5.1696,
-      "maxima": 5.1762,
-      "minima": 5.0912,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0778,
-      "variacao_percentual": 1.52813
+      "variacao_percentual": 1.528127
     },
     {
       "data": "2026-09-15",
-      "data_hora": "2026-09-15T13:09:19-03:00",
-      "timestamp": 1789488559,
       "compra": 5.1484,
       "venda": 5.149,
-      "maxima": 5.169,
-      "minima": 5.141,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0206,
-      "variacao_percentual": -0.398533
+      "variacao_percentual": -0.39853
     },
     {
       "data": "2026-09-16",
-      "data_hora": "2026-09-16T13:05:30-03:00",
-      "timestamp": 1789574730,
       "compra": 5.152,
       "venda": 5.1527,
-      "maxima": 5.1597,
-      "minima": 5.1483,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0036,
-      "variacao_percentual": 0.069928
+      "variacao_percentual": 0.069925
     },
     {
       "data": "2026-09-17",
-      "data_hora": "2026-09-17T13:03:21-03:00",
-      "timestamp": 1789661001,
       "compra": 5.1515,
       "venda": 5.1521,
-      "maxima": 5.1596,
-      "minima": 5.1336,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0005,
-      "variacao_percentual": -0.009704
+      "variacao_percentual": -0.009705
     },
     {
       "data": "2026-09-18",
-      "data_hora": "2026-09-18T13:03:34-03:00",
-      "timestamp": 1789747414,
       "compra": 5.1569,
       "venda": 5.1575,
-      "maxima": 5.1632,
-      "minima": 5.1441,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0054,
-      "variacao_percentual": 0.104819
+      "variacao_percentual": 0.104824
     },
     {
       "data": "2026-09-21",
-      "data_hora": "2026-09-21T13:06:51-03:00",
-      "timestamp": 1790006811,
       "compra": 5.1111,
       "venda": 5.1117,
-      "maxima": 5.1569,
-      "minima": 5.1071,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0458,
-      "variacao_percentual": -0.888129
+      "variacao_percentual": -0.88813
     },
     {
       "data": "2026-09-22",
-      "data_hora": "2026-09-22T13:03:30-03:00",
-      "timestamp": 1790093010,
       "compra": 5.1155,
       "venda": 5.1161,
-      "maxima": 5.1233,
-      "minima": 5.108,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0044,
-      "variacao_percentual": 0.086083
+      "variacao_percentual": 0.086087
     },
     {
       "data": "2026-09-23",
-      "data_hora": "2026-09-23T13:04:22-03:00",
-      "timestamp": 1790179462,
       "compra": 5.1408,
       "venda": 5.1414,
-      "maxima": 5.1439,
-      "minima": 5.1155,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0253,
-      "variacao_percentual": 0.494576
+      "variacao_percentual": 0.494575
     },
     {
       "data": "2026-09-24",
-      "data_hora": "2026-09-24T13:03:18-03:00",
-      "timestamp": 1790265798,
       "compra": 5.1789,
       "venda": 5.1795,
-      "maxima": 5.1824,
-      "minima": 5.1408,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0381,
       "variacao_percentual": 0.74113
     },
     {
       "data": "2026-09-25",
-      "data_hora": "2026-09-25T13:10:17-03:00",
-      "timestamp": 1790352617,
       "compra": 5.1985,
       "venda": 5.1991,
-      "maxima": 5.2066,
-      "minima": 5.1789,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0196,
-      "variacao_percentual": 0.378463
+      "variacao_percentual": 0.378459
     },
     {
       "data": "2026-09-28",
-      "data_hora": "2026-09-28T13:03:11-03:00",
-      "timestamp": 1790611391,
       "compra": 5.2126,
       "venda": 5.2132,
-      "maxima": 5.215,
-      "minima": 5.1985,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0141,
-      "variacao_percentual": 0.271229
+      "variacao_percentual": 0.271232
     },
     {
       "data": "2026-09-29",
-      "data_hora": "2026-09-29T13:06:06-03:00",
-      "timestamp": 1790697966,
       "compra": 5.2198,
       "venda": 5.2204,
-      "maxima": 5.226,
-      "minima": 5.2081,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0072,
-      "variacao_percentual": 0.138122
+      "variacao_percentual": 0.138127
     },
     {
       "data": "2026-09-30",
-      "data_hora": "2026-09-30T13:11:44-03:00",
-      "timestamp": 1790784704,
       "compra": 5.1803,
       "venda": 5.1809,
-      "maxima": 5.2198,
-      "minima": 5.175,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0395,
       "variacao_percentual": -0.756734
     },
     {
       "data": "2026-10-01",
-      "data_hora": "2026-10-01T13:10:35-03:00",
-      "timestamp": 1790871035,
       "compra": 5.2073,
       "venda": 5.2079,
-      "maxima": 5.2183,
-      "minima": 5.1803,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.027,
-      "variacao_percentual": 0.521201
+      "variacao_percentual": 0.521205
     },
     {
       "data": "2026-10-02",
-      "data_hora": "2026-10-02T13:03:16-03:00",
-      "timestamp": 1790956996,
       "compra": 5.2232,
       "venda": 5.2238,
-      "maxima": 5.2356,
-      "minima": 5.2073,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0159,
-      "variacao_percentual": 0.305337
+      "variacao_percentual": 0.305341
     },
     {
       "data": "2026-10-05",
-      "data_hora": "2026-10-05T13:07:36-03:00",
-      "timestamp": 1791216456,
       "compra": 4.9853,
       "venda": 4.9859,
-      "maxima": 5.2232,
-      "minima": 4.9773,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.2379,
-      "variacao_percentual": -4.55468
+      "variacao_percentual": -4.554679
     },
     {
       "data": "2026-10-06",
-      "data_hora": "2026-10-06T13:03:21-03:00",
-      "timestamp": 1791302601,
       "compra": 4.9692,
       "venda": 4.9698,
-      "maxima": 4.9853,
-      "minima": 4.9573,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0161,
-      "variacao_percentual": -0.322951
+      "variacao_percentual": -0.322949
     },
     {
       "data": "2026-10-07",
-      "data_hora": "2026-10-07T13:05:23-03:00",
-      "timestamp": 1791389123,
       "compra": 4.9929,
       "venda": 4.9935,
-      "maxima": 4.9933,
-      "minima": 4.9692,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0237,
-      "variacao_percentual": 0.476935
+      "variacao_percentual": 0.476938
     },
     {
       "data": "2026-10-08",
-      "data_hora": "2026-10-08T13:08:16-03:00",
-      "timestamp": 1791475696,
       "compra": 5.0113,
       "venda": 5.0119,
-      "maxima": 5.0197,
-      "minima": 4.9929,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0184,
-      "variacao_percentual": 0.368525
+      "variacao_percentual": 0.368523
     },
     {
       "data": "2026-10-09",
-      "data_hora": "2026-10-09T13:07:30-03:00",
-      "timestamp": 1791562050,
       "compra": 4.9886,
       "venda": 4.9892,
-      "maxima": 5.0113,
-      "minima": 4.9855,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0227,
-      "variacao_percentual": -0.452978
+      "variacao_percentual": -0.452976
     },
     {
       "data": "2026-10-13",
-      "data_hora": "2026-10-13T13:04:26-03:00",
-      "timestamp": 1791907466,
       "compra": 5.009,
       "venda": 5.0096,
-      "maxima": 5.0213,
-      "minima": 4.9886,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0204,
-      "variacao_percentual": 0.408937
+      "variacao_percentual": 0.408932
     },
     {
       "data": "2026-10-14",
-      "data_hora": "2026-10-14T13:05:17-03:00",
-      "timestamp": 1791993917,
       "compra": 5.0435,
       "venda": 5.0441,
-      "maxima": 5.049,
-      "minima": 5.009,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0345,
-      "variacao_percentual": 0.688764
+      "variacao_percentual": 0.68876
     },
     {
       "data": "2026-10-15",
-      "data_hora": "2026-10-15T13:05:33-03:00",
-      "timestamp": 1792080333,
       "compra": 5.0515,
       "venda": 5.0521,
-      "maxima": 5.0595,
-      "minima": 5.0422,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.008,
-      "variacao_percentual": 0.158621
+      "variacao_percentual": 0.15862
     },
     {
       "data": "2026-10-16",
-      "data_hora": "2026-10-16T13:04:14-03:00",
-      "timestamp": 1792166654,
       "compra": 5.082,
       "venda": 5.0826,
-      "maxima": 5.0828,
-      "minima": 5.0515,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0305,
-      "variacao_percentual": 0.603784
+      "variacao_percentual": 0.603781
     },
     {
       "data": "2026-10-19",
-      "data_hora": "2026-10-19T13:05:47-03:00",
-      "timestamp": 1792425947,
       "compra": 5.0558,
       "venda": 5.0564,
-      "maxima": 5.082,
-      "minima": 5.0487,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0262,
-      "variacao_percentual": -0.515541
+      "variacao_percentual": -0.515545
     },
     {
       "data": "2026-10-20",
-      "data_hora": "2026-10-20T13:09:36-03:00",
-      "timestamp": 1792512576,
       "compra": 5.0134,
       "venda": 5.014,
-      "maxima": 5.0558,
-      "minima": 5.0127,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": -0.0424,
-      "variacao_percentual": -0.83864
+      "variacao_percentual": -0.838641
     },
     {
       "data": "2026-10-21",
-      "data_hora": "2026-10-21T13:08:17-03:00",
-      "timestamp": 1792598897,
       "compra": 5.027,
       "venda": 5.0277,
-      "maxima": 5.0285,
-      "minima": 5.0134,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0136,
-      "variacao_percentual": 0.271271
+      "variacao_percentual": 0.271273
     },
     {
       "data": "2026-10-22",
-      "data_hora": "2026-10-22T13:12:09-03:00",
-      "timestamp": 1792685529,
       "compra": 5.0377,
       "venda": 5.0383,
-      "maxima": 5.0408,
-      "minima": 5.027,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
       "variacao": 0.0107,
-      "variacao_percentual": 0.212852
-    },
-    {
-      "data": "2026-10-23",
-      "data_hora": "2026-10-23T12:11:10-03:00",
-      "timestamp": 1792768270,
-      "compra": 5.0413,
-      "venda": 5.0419,
-      "maxima": 5.0413,
-      "minima": 5.0319,
-      "variacao": 0.0036,
-      "variacao_percentual": 0.071458
+      "variacao_percentual": 0.212851
     }
   ]
 }
