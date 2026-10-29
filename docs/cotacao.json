@@ -1,28 +1,28 @@
 {
   "par": "USD/BRL",
-  "coletado_em": "2026-10-27T21:07:39-03:00",
+  "coletado_em": "2026-10-28T21:29:28-03:00",
   "fontes": {
     "comercial": "AwesomeAPI",
     "ptax": "Banco Central do Brasil"
   },
   "ptax_consulta_atualizada": true,
   "comercial": {
-    "data": "2026-10-27",
-    "data_hora": "2026-10-27T20:18:35-03:00",
-    "timestamp": 1793143115,
-    "compra": 5.3513,
-    "venda": 5.3519,
+    "data": "2026-10-28",
+    "data_hora": "2026-10-28T20:21:00-03:00",
+    "timestamp": 1793229660,
+    "compra": 5.3461,
+    "venda": 5.3466,
     "fonte": "AwesomeAPI",
     "tipo": "mercado_indicativo",
-    "maxima": 5.4191,
-    "minima": 5.3077,
-    "variacao": -0.0199,
-    "variacao_percentual": -0.370496
+    "maxima": 5.3982,
+    "minima": 5.3117,
+    "variacao": -0.0053,
+    "variacao_percentual": -0.099038
   },
   "ptax": {
-    "data": "2026-10-27",
-    "compra": 5.334,
-    "venda": 5.3346,
+    "data": "2026-10-28",
+    "compra": 5.3414,
+    "venda": 5.342,
     "fonte": "Banco Central do Brasil",
     "tipo_boletim": "Fechamento",
     "confirmada": true,
@@ -30,7 +30,7 @@
       "compra": 10813,
       "venda": 1
     },
-    "variacao": -0.1658,
-    "variacao_percentual": -3.014655
+    "variacao": 0.0074,
+    "variacao_percentual": 0.138733
   }
 }
