@@ -611,6 +611,19 @@
       "minima": 5.4835,
       "variacao": -0.0008,
       "variacao_percentual": -0.014534
+    },
+    {
+      "data": "2026-11-08",
+      "data_hora": "2026-11-08T20:57:45-03:00",
+      "timestamp": 1794182265,
+      "compra": 5.505,
+      "venda": 5.5055,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
+      "maxima": 5.505,
+      "minima": 5.503,
+      "variacao": 0.002,
+      "variacao_percentual": 0.036348
     }
   ],
   "ptax": [
