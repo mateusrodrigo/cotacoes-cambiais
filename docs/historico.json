@@ -767,6 +767,19 @@
       "minima": 5.9223,
       "variacao": -0.0195,
       "variacao_percentual": -0.327799
+    },
+    {
+      "data": "2026-11-25",
+      "data_hora": "2026-11-25T00:32:11-03:00",
+      "timestamp": 1795577531,
+      "compra": 5.9028,
+      "venda": 5.9033,
+      "fonte": "AwesomeAPI",
+      "tipo": "mercado_indicativo",
+      "maxima": 5.9055,
+      "minima": 5.9028,
+      "variacao": -0.0027,
+      "variacao_percentual": -0.045719
     }
   ],
   "ptax": [
@@ -2223,6 +2236,20 @@
       },
       "variacao": 0.0819,
       "variacao_percentual": 1.390894
+    },
+    {
+      "data": "2026-11-24",
+      "compra": 5.8567,
+      "venda": 5.8573,
+      "fonte": "Banco Central do Brasil",
+      "tipo_boletim": "Fechamento",
+      "confirmada": true,
+      "series_sgs": {
+        "compra": 10813,
+        "venda": 1
+      },
+      "variacao": -0.1135,
+      "variacao_percentual": -1.901109
     }
   ]
 }
